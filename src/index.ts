@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms'
 
 import TabbyCoreModule from 'tabby-core'
 
+import { AIProviderService } from './services/ai-provider.service'
+
 /** @hidden */
 @NgModule({
     imports: [
@@ -12,6 +14,7 @@ import TabbyCoreModule from 'tabby-core'
         TabbyCoreModule,
     ],
     providers: [
+        AIProviderService,
         // AI extension points (multi: true providers) will be registered here.
     ],
     declarations: [],

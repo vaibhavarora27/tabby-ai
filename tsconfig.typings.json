@@ -12,6 +12,8 @@
   "exclude": [
     "node_modules",
     "dist",
-    "typings"
+    "typings",
+    "src/**/*.test.ts",
+    "src/test/**/*"
   ]
 }
