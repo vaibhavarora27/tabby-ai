@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'
 
 import TabbyCoreModule, { ConfigProvider, HotkeyProvider } from 'tabby-core'
 import { SettingsTabProvider } from 'tabby-settings'
+import { TerminalDecorator } from 'tabby-terminal'
 
 import { AIProviderService } from './services/ai-provider.service'
 import { AISettingsConfigProvider } from './config.provider'
@@ -16,6 +17,9 @@ import {
 import { NLCommandService } from './services/nl-command.service'
 import { NLCommandLauncher } from './services/nl-command.launcher'
 import { NLCommandOverlayComponent } from './components/nl-command-overlay.component'
+import { ErrorExplainerService } from './services/error-explainer.service'
+import { ErrorExplainDecorator } from './decorators/error-explain.decorator'
+import { ErrorExplainPanelComponent } from './components/error-explain-panel.component'
 
 /** @hidden */
 @NgModule({
@@ -32,10 +36,13 @@ import { NLCommandOverlayComponent } from './components/nl-command-overlay.compo
         { provide: HotkeyProvider, useClass: AINLCommandHotkeyProvider, multi: true },
         NLCommandService,
         NLCommandLauncher,
+        ErrorExplainerService,
+        { provide: TerminalDecorator, useClass: ErrorExplainDecorator, multi: true },
     ],
     declarations: [
         AISettingsComponent,
         NLCommandOverlayComponent,
+        ErrorExplainPanelComponent,
     ],
     // No entryComponents: Angular 15 is Ivy; components are instantiated
     // dynamically (settings tab via getComponentType(), the overlay via
