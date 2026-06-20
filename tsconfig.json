@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "target": "es2019",
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "sourceMap": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "typings",
+    "lib": [
+      "dom",
+      "es2019",
+      "es2020"
+    ]
+  },
+  "angularCompilerOptions": {
+    "compilationMode": "partial",
+    "enableResourceInlining": true,
+    "strictInjectionParameters": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "typings"
+  ]
+}
