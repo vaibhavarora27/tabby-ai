@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 
-import TabbyCoreModule from 'tabby-core'
+import TabbyCoreModule, { ConfigProvider } from 'tabby-core'
+import { SettingsTabProvider } from 'tabby-settings'
 
 import { AIProviderService } from './services/ai-provider.service'
+import { AISettingsConfigProvider } from './config.provider'
+import { AISettingsTabProvider } from './settings/ai-settings-tab.provider'
+import { AISettingsComponent } from './settings/ai-settings.component'
 
 /** @hidden */
 @NgModule({
@@ -15,9 +19,12 @@ import { AIProviderService } from './services/ai-provider.service'
     ],
     providers: [
         AIProviderService,
-        // AI extension points (multi: true providers) will be registered here.
+        { provide: ConfigProvider, useClass: AISettingsConfigProvider, multi: true },
+        { provide: SettingsTabProvider, useClass: AISettingsTabProvider, multi: true },
     ],
-    declarations: [],
+    declarations: [
+        AISettingsComponent,
+    ],
 })
 export default class TabbyAIModule {
     constructor () {
