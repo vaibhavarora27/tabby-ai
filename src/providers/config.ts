@@ -29,6 +29,9 @@ export interface AISettings {
     /** Upper bound on generated tokens (required by Anthropic, forwarded where
      * supported). */
     maxTokens: number
+    /** When true, a failed command is automatically explained with a suggested
+     * fix (issue #5). Defaults to on. */
+    autoExplainErrors: boolean
 }
 
 /**
@@ -46,6 +49,7 @@ export const DEFAULT_AI_SETTINGS: AISettings = {
     model: '',
     ollamaBaseUrl: 'http://localhost:11434',
     maxTokens: 1024,
+    autoExplainErrors: true,
 }
 
 /**

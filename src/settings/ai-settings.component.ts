@@ -159,6 +159,20 @@ interface TestResult {
 
             <div class="form-line">
                 <div class="header">
+                    <div class="title">Auto-explain errors</div>
+                    <div class="description">When a command fails, automatically explain it and suggest a fix. Needs shell integration for reliable exit codes — see shell-integration/README.md.</div>
+                </div>
+                <label class="toggle">
+                    <input
+                        type="checkbox"
+                        [(ngModel)]="settings.autoExplainErrors"
+                        (change)="persist()"
+                    />
+                </label>
+            </div>
+
+            <div class="form-line">
+                <div class="header">
                     <div class="title">Connection</div>
                     <div class="description">Verify the provider is reachable with these settings.</div>
                 </div>
