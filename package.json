@@ -1,0 +1,70 @@
+{
+  "name": "tabby-ai",
+  "version": "0.1.0",
+  "description": "AI assistant integration for the Tabby terminal.",
+  "homepage": "https://github.com/vaibhavarora27/tabby-ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vaibhavarora27/tabby-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vaibhavarora27/tabby-ai/issues"
+  },
+  "keywords": [
+    "tabby-plugin",
+    "ai"
+  ],
+  "main": "dist/index.js",
+  "typings": "typings/index.d.ts",
+  "scripts": {
+    "build": "webpack --progress --color && npm run build:typings",
+    "build:typings": "tsc -p tsconfig.typings.json",
+    "watch": "webpack --progress --color --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "typings"
+  ],
+  "author": "Vaibhav Arora",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@angular/animations": "^15",
+    "@angular/common": "^15",
+    "@angular/core": "^15",
+    "@angular/forms": "^15",
+    "@angular/platform-browser": "^15",
+    "@angular/platform-browser-dynamic": "^15",
+    "@ng-bootstrap/ng-bootstrap": "^14",
+    "rxjs": "^7",
+    "tabby-core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@angular/animations": "^15.2.6",
+    "@angular/common": "^15.2.6",
+    "@angular/compiler": "^15.2.6",
+    "@angular/compiler-cli": "^15.2.6",
+    "@angular/core": "^15.2.6",
+    "@angular/forms": "^15.2.6",
+    "@angular/platform-browser": "^15.2.6",
+    "@angular/platform-browser-dynamic": "^15.2.6",
+    "@ng-bootstrap/ng-bootstrap": "^14.2.0",
+    "@ngtools/webpack": "^15.2.11",
+    "@types/node": "^20.3.1",
+    "@types/webpack-env": "^1.18.0",
+    "rxjs": "^7.8.1",
+    "sass": "^1.63.4",
+    "sass-loader": "^13.3.2",
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3",
+    "tabby-core": "^1.0.156",
+    "typescript": "^4.9.5",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.0.1",
+    "zone.js": "^0.13.0"
+  }
+}
